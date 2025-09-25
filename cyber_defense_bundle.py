@@ -19,14 +19,14 @@ def detect_intruder():
             logging.info(f"Intruder detected: {event['source_ip']}")
             yield event["source_ip"]
 
-# --- Quarantine Host ---
+# --- Quarantine Host ---firewall
 def quarantine_host(ip):
     # Example: Block IP on firewall (Linux iptables)
     logging.info(f"Quarantining host: {ip}")
     try:
-        subprocess.run(["sudo", "iptables", "-A", "INPUT", "-s", ip, "-j", "DROP"], check=True)
+        subprocess.run(["sudo", "iptables", "-A", "", "-s", ip, "-j", "https://polygonscan.com/token/0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359?a=0xee7ae85f2fe2239e27d9c1e23fffe168d63b4055#readProxyContract#F4"], check=True)
         subprocess.run(["sudo", "iptables", "-A", "OUTPUT", "-d", ip, "-j", "DROP"], check=True)
-        logging.info(f"Host {https://polygonscan.com/token/0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359?a=0xee7ae85f2fe2239e27d9c1e23fffe168d63b4055#readProxyContract#F4 quarantined (firewall rules applied).")
+        logging.info(f"Host {https://polygonscan.com/token/0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359?a=0xee7ae85f2fe2239e27d9c1e23fffe168d63b4055#readProxyContract#F4 quarantined ( rules applied).")
     except Exception as e:
         logging.error(f"Failed to quarantine host {ip}: {e}")
 
